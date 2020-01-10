@@ -1,7 +1,7 @@
 require('dotenv').config()
 const fs = require('fs')
 
-if(process.env.NODE_ENV= 'production') fs.writeFileSync('key.json', process.env.GCP_SERVICE_KEY)
+if(process.env.NODE_ENV === 'production') fs.writeFileSync('key.json', process.env.GCP_SERVICE_KEY)
 
 const server = require('./server/app');
 const socket = require('./ws/app');
