@@ -11,25 +11,25 @@ const wss = new WebSocket.Server({
 let sessions = {};
 
 wss.on('connection', (ws) => {
-    let sessionId = uuidv4();
-    sessions[sessionId] = {
-        id: sessionId,
-        date: new Date(),
-    };
-
-    ws.sessionId = sessionId
 
     ws.on('message', function (msg) {
         const incoming = JSON.parse(msg);
         switch (incoming.type) {
             case "login":
+                let sessionId = uuidv4();
+                sessions[sessionId] = {
+                    id: sessionId,
+                    date: new Date(),
+                };
+            
+                ws.sessionId = sessionId
                 ws.send(JSON.stringify({
                     type: 'sessionId',
                     msg: sessionId
                 }));
                 break;
             case "chat":
-                if (!sessions[ws.sessionId]) {
+                if (!sessions[incoming.sessionId]) {
                     ws.send(JSON.stringify({
                         msg: "Please login first"
                     }))
