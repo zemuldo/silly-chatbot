@@ -1,5 +1,7 @@
 # silly-chatbot
 
+URL: `wss://z-silly-chatbot.herokuapp.com/`
+
 ## Get session
 
 ### Message
