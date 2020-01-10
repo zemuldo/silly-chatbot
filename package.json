@@ -13,10 +13,10 @@
     "url": "git+ssh://git@github.com/zemuldo/silly-chatbot.git"
   },
   "keywords": [
-    "zemuldo"
+    "zemuldo, chatbot, dialogue flow"
   ],
   "author": "Danstan Otieno Onyango",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zemuldo/silly-chatbot/issues"
   },
@@ -27,5 +27,8 @@
     "express": "^4.17.1",
     "uuid": "^3.3.3",
     "ws": "^3.3.3"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
